@@ -1,0 +1,89 @@
+//
+//  PrefixHeader.pch
+//  PandaMall
+//
+//  Created by Sherlock on 2022/7/25.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "UIImage+Color.h"
+#import <SVProgressHUD.h>
+#import <AFNetworking.h>
+#import "UIView+JKVisuals.h"
+#import "UIView+JKFrame.h"
+#import "UILabel+BM.h"
+#import <SDWebImage/SDWebImage.h>
+#import "CommonUtil.h"
+#import <Realm/Realm.h>
+#import <JKCategories/JKCategories.h>
+#import "Masonry.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
+#import <IQKeyboardManager.h>
+#import "NSString+URL.h"
+#import <UICKeyChainStore.h>
+#import "DataManager.h"
+#import "ProductModel.h"
+#import "MJExtension.h"
+#import "BasketProductModel.h"
+#import "DateUtil.h"
+
+//系统颜色
+#define kBlackColor     [UIColor blackColor]
+#define kDarkGrayColor  [UIColor darkGrayColor]
+#define kWhiteColor     [UIColor whiteColor]
+#define kGrayColor      [UIColor grayColor]
+#define kRedColor       [UIColor redColor]
+#define kGreenColor     [UIColor greenColor]
+#define kBlueColor      [UIColor blueColor]
+#define kCyanColor      [UIColor cyanColor]
+#define kYellowColor    [UIColor yellowColor]
+#define kMagentaColor   [UIColor magentaColor]
+#define kOrangeColor    [UIColor orangeColor]
+#define kPurpleColor    [UIColor purpleColor]
+#define kBrownColor     [UIColor brownColor]
+#define kClearColor     [UIColor clearColor]
+
+#define mc_Is_iphone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define mc_Is_iphoneX SCREEN_WIDTH >=375.0f && SCREEN_HEIGHT >=812.0f&& mc_Is_iphone
+#define mc_Is_iPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
+#define ColorWithRGB(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+// RGB颜色
+#define  RGBColor(r, g, b)      [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define WEAKSELF                    typeof(self) __weak weakSelf = self;
+#define FontWithSize(r) [UIFont fontWithName:@"PingFang SC" size:r]
+#define SCREENWIDTH                 [UIScreen mainScreen].bounds.size.width
+#define  Statur_HEIGHT              [[UIApplication sharedApplication] statusBarFrame].size.height  //状态栏高度
+#define  NAVIBAR_HEIGHT             (self.navigationController.navigationBar.frame.size.height)     //导航栏高度
+#define  INVALID_VIEW_HEIGHT        (Statur_HEIGHT + NAVIBAR_HEIGHT)                                //状态栏+导航栏高度
+
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+
+/*状态栏高度*/
+#define mcStatusBarHeight (CGFloat)(mc_Is_iphoneX?(44.0):(20.0))
+/*导航栏高度*/
+#define mcNavBarHeight (44)
+/*状态栏和导航栏总高度*/
+#define mcNavBarAndStatusBarHeight (CGFloat)(mc_Is_iphoneX?(88.0):(64.0))
+/*TabBar高度*/
+#define mcTabBarHeight (CGFloat)(mc_Is_iphoneX?(49.0 + 34.0):(49.0))
+/*顶部安全区域远离高度*/
+#define mcTopBarSafeHeight (CGFloat)(mc_Is_iphoneX?(44.0):(0))
+ /*底部安全区域远离高度*/
+#define mcBottomSafeHeight (CGFloat)(mc_Is_iphoneX?(34.0):(0))
+/*iPhoneX的状态栏高度差值*/
+#define mcTopBarDifHeight (CGFloat)(mc_Is_iphoneX?(24.0):(0))
+/*导航条和Tabbar总高度*/
+#define mcNavAndTabHeight (mcNavBarAndStatusBarHeight + mcTabBarHeight)
+#define kScale(w)  (mc_Is_iPad ? floor(w * ScreenWidth / 768) : floor(w * ScreenWidth / 375)) //自适应屏幕宽度，基准是按6屏幕分辨率
+
+#define IMG(A) [UIImage imageNamed:A]
+
+#endif /* PrefixHeader_pch */
